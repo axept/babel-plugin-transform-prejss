@@ -1,7 +1,6 @@
 import * as t from 'babel-types'
 
 const restoreExpressions = (objectCSS, expressions) => {
-  console.log(objectCSS, expressions)
   return t.objectExpression(Object.entries(objectCSS).map(([ key, value ]) => {
     const finalKey = expressions[key] ? expressions[key] : t.stringLiteral(key);
     let finalValue;
