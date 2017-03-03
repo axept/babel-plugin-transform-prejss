@@ -4,13 +4,14 @@
   "description": "Get the power of PostCSS and Babel with plugins in your JSS styles. Just put CSS into JS and get it as JSS object.",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf lib dist",
     "build:lib": "babel src --out-dir lib",
-    "build": "npm run clean && npm run build:lib",
     "lint": "./node_modules/.bin/eslint src/",
     "flow": "flow check src/",
+    "clean": "rimraf lib dist",
+    "check": "npm run flow",
     "test": "jest",
-    "prepublish": "npm run build"
+    "build": "npm run build:lib",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
