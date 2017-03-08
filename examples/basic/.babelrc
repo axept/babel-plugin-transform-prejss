@@ -5,7 +5,12 @@
   ],
   "plugins": [
     ["../../src/index.js", {
-      "namespace": "prejss"
+      "namespace": "prejss",
+      "config": {
+        "plugins": [
+          "postcss-nested"
+        ]
+      }
     }]
   ]
 }

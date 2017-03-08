@@ -42,7 +42,7 @@
   "homepage": "https://github.com/axept/prejss",
   "dependencies": {
     "babel-types": "^6.23.0",
-    "prejss-postcss-parser": "github:axept/prejss-postcss-parser"
+    "prejss-postcss-parser": "^0.3.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
