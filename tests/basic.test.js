@@ -1,11 +1,11 @@
-import prejss from '../src/index';
+import preJSS from '../src/index';
 
-it('plain css parsed to object', () => {
+it('plain CSS parsed to object', () => {
   const colors = {
     main: 'red',
   }
 
-  const style = ({ main }) => prejss`
+  const style = ({ main }) => preJSS`
     button {
       width: ${nike => '100px'};
       height: 100px;
