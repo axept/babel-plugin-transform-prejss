@@ -11,6 +11,7 @@
     "check": "npm run flow",
     "test": "exit 0",
     "build": "npm run build:lib",
+    "example": "cd examples/basic && npm run build",
     "prepublish": "npm run clean && npm run build"
   },
   "repository": {
@@ -43,7 +44,7 @@
   "homepage": "https://github.com/axept/prejss",
   "dependencies": {
     "babel-types": "^6.23.0",
-    "prejss-postcss-parser": "^0.3.0"
+    "prejss-postcss-parser": "^0.3.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
