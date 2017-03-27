@@ -1,5 +1,4 @@
-babel-plugin-transform-prejss
-====
+# babel-plugin-transform-prejss
 
 [![Travis branch](https://img.shields.io/travis/axept/babel-plugin-transform-prejss/master.svg?style=flat-square)](https://travis-ci.org/axept/babel-plugin-transform-prejss)
 [![npm version](https://img.shields.io/npm/v/babel-plugin-transform-prejss.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-transform-prejss)
@@ -7,6 +6,7 @@ babel-plugin-transform-prejss
 [![npm license](https://img.shields.io/npm/l/babel-plugin-transform-prejss.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-transform-prejss)
 
 [Babel](https://github.com/babel/babel) plugin which turns PreJSS constructions into JSS objects.
+
 
 ## Example
 
@@ -47,13 +47,24 @@ var button = function button(_ref) {
 
 See more details here: https://github.com/axept/prejss
 
+
 ## Installation
 
 ```bash
 npm install babel-plugin-transform-prejss --save-dev
 ```
 
+
 ## Usage
+
+### Options
+
++ `removeImport: <Boolean|String>` - by default is `prejss`. You can configure it to `false` if you wouldn't like to remove imports for "prejss" automatically. But think twice! By disabling this option you may include server code and a lot of unnecessary dependencies into your bundle.
+
++ `silent: <Boolean>` - by default is `false`. This option is configuring if the plugin should or not to log about each removed prejss import.
+
++ `namespace: <String>` - by default is `preJSS`
+
 
 ### Via `.babelrc` (Recommended)
 
@@ -65,11 +76,13 @@ npm install babel-plugin-transform-prejss --save-dev
 }
 ```
 
+
 ### Via CLI
 
 ```sh
 babel --plugins transform-prejss script.js
 ```
+
 
 ### Via Node API
 
