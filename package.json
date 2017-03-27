@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-prejss",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Get the power of PostCSS and Babel with plugins in your JSS styles. Just put CSS into JS and get it as JSS object.",
   "main": "lib/index.js",
   "scripts": {
