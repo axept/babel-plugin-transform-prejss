@@ -14,10 +14,14 @@ export default ({ types: t }) => {
         
         const importRef = p.parentPath.node.source.value
         if (importRef === removeImport) {
-          console.log(
-            `babel-plugin-transform-prejss: remove an import construction for ${importRef}` +
-            ` from ${file.opts.filename}"`
-          )
+          
+          if (opts['silent'] !== true) {
+            console.log(
+              `babel-plugin-transform-prejss: remove import construction for "${importRef}"` +
+              ` from "${file.opts.filename}"`
+            )
+          }
+          
           p.parentPath.remove()
         }
       },
