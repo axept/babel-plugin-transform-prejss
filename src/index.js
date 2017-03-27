@@ -7,7 +7,10 @@ export default ({ types: t }) => {
   return {
     visitor: {
       ImportDefaultSpecifier(p, { opts, file }) {
-        const removeImports = opts['removeImports'] || 'prejss'
+        const removeImports =
+          (typeof opts['removeImports'] !== 'undefined') ?
+            opts['removeImports'] :
+            'prejss'
         if (removeImports === false) {
           return
         }
@@ -30,7 +33,8 @@ export default ({ types: t }) => {
         const namespace = opts['namespace'] || 'preJSS'
         
         if (!parser) {
-          parser = require(opts.parser || 'prejss-postcss-parser')
+          const parserName = opts['parser'] || 'prejss-postcss-parser'
+          parser = require(parserName)
           if (typeof parser !== 'function') {
             parser = parser.default
           }
