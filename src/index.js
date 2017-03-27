@@ -27,7 +27,7 @@ export default ({ types: t }) => {
       },
 
       TaggedTemplateExpression(p, { opts }) {
-        const namespace = opts['namespace'] || 'prejss'
+        const namespace = opts['namespace'] || 'preJSS'
         
         if (!parser) {
           parser = require(opts.parser || 'prejss-postcss-parser')
@@ -37,7 +37,7 @@ export default ({ types: t }) => {
         }
         
         const { tag } = p.node
-        if (tag.name !== namespace) {
+        if (tag.name.toLowerCase() !== namespace.toLowerCase()) {
           return
         }
 
