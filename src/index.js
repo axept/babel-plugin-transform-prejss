@@ -12,7 +12,7 @@ export default ({ types: t }) => {
           return
         }
         
-        const importRef = a.parentPath.node.source.value
+        const importRef = p.parentPath.node.source.value
         if (importRef === removeImport) {
           console.log(
             `babel-plugin-transform-prejss: remove an import construction for ${importRef}` +
