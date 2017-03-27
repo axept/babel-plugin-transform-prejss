@@ -7,13 +7,13 @@ export default ({ types: t }) => {
   return {
     visitor: {
       ImportDefaultSpecifier(p, { opts, file }) {
-        const removeImport = opts['removeImport'] || 'prejss'
-        if (removeImport === false) {
+        const removeImports = opts['removeImports'] || 'prejss'
+        if (removeImports === false) {
           return
         }
         
         const importRef = p.parentPath.node.source.value
-        if (importRef === removeImport) {
+        if (importRef === removeImports) {
           
           if (opts['silent'] !== true) {
             console.log(
